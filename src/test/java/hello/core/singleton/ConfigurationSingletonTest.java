@@ -22,4 +22,12 @@ public class ConfigurationSingletonTest {
         System.out.println(memberRepository1);
         System.out.println(memberRepository2);
     }
+
+    @Test
+    void configurationDeepTest() {
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        AppConfig bean = ac.getBean(AppConfig.class);
+
+        System.out.println("bean " + bean.getClass());
+    }
 }
